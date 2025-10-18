@@ -4,55 +4,132 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Файл временно недоступен</title>
+  <link rel="icon" href="assets/images/avatar.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
   <style>
     body {
+      background-color: #f7f7f7;
+      color: #222;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
       text-align: center;
-      padding: 60px 20px;
+      padding: 20px;
     }
+
     .notice {
-      max-width: 400px;
-      margin: 0 auto;
       background: #fff;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border-radius: 6px;
-      padding: 30px;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      border-radius: 8px;
+      padding: 40px 30px;
+      max-width: 420px;
+      width: 100%;
+      animation: fadeIn 0.6s ease;
+      z-index: 1;
     }
+
     .notice h2 {
-      margin-bottom: 15px;
       color: #444;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
     }
+
     .notice p {
-      margin-bottom: 25px;
       color: #555;
+      margin-bottom: 25px;
+      font-size: 1rem;
+      line-height: 1.5;
     }
+
     .btn {
       display: inline-block;
-      padding: 10px 20px;
+      padding: 10px 24px;
       background-color: #444;
       color: #fff;
       border-radius: 4px;
       text-decoration: none;
       transition: all 0.2s ease;
+      font-size: 0.95rem;
     }
+
     .btn:hover { background-color: #666; }
     .btn:active { transform: scale(0.96); }
+
+    /* Анимации */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Прелоадер */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    #preloader img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .fade-out {
+      animation: fadeOut 1.5s ease forwards;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; visibility: hidden; }
+    }
+
+    @media (max-width: 768px) {
+      .notice {
+        padding: 30px 20px;
+      }
+      .notice h2 { font-size: 1.2rem; }
+      .notice p { font-size: 0.95rem; }
+    }
   </style>
 </head>
 <body>
+  <div id="preloader">
+    <img src="assets/images/avatar.png" alt="Загрузка...">
+  </div>
+
   <div class="notice">
     <h2>Файл временно недоступен</h2>
-    <p>Ведутся технические работы или книга ещё не загружена.  
-       Возвращаемся на главную через пару секунд...</p>
+    <p>Похоже, эта книга сейчас на техобслуживании.<br>
+       Возвращаемся на главную страницу через пару секунд...</p>
     <a href="index.html" class="btn">Вернуться сейчас</a>
   </div>
 
   <script>
-    // автоматическое возвращение на главную через 5 секунд
+    // Скрываем прелоадер
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      preloader.classList.add("fade-out");
+      setTimeout(() => preloader.remove(), 1500); // прелоадер держится 1.5с
+    });
+
+    // Автоматический возврат на главную через 3 секунды
     setTimeout(() => {
       window.location.href = "index.html";
-    }, 5000);
+    }, 3000);
   </script>
 </body>
 </html>
