@@ -7,104 +7,105 @@
   <link rel="icon" href="assets/images/avatar.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    body {
-      background-color: #f7f7f7;
-      color: #222;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-      padding: 20px;
-    }
+  body {
+    background-color: #f7f7f7;
+    color: #222;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;   /* ✅ фиксирует центрирование и на десктопах, и на мобильных */
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+  }
 
+  .notice {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    padding: 40px 30px;
+    max-width: 420px;
+    width: 100%;
+    animation: fadeIn 0.6s ease;
+    z-index: 1;
+  }
+
+  .notice h2 {
+    color: #444;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+  }
+
+  .notice p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+  }
+
+  .btn:hover { background-color: #666; }
+  .btn:active { transform: scale(0.96); }
+
+  /* Анимации */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Прелоадер */
+  #preloader {
+    position: fixed;
+    inset: 0;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  #preloader img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .fade-out {
+    animation: fadeOut 1.5s ease forwards;
+  }
+
+  @keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+  }
+
+  @media (max-width: 768px) {
     .notice {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-      border-radius: 8px;
-      padding: 40px 30px;
-      max-width: 420px;
-      width: 100%;
-      animation: fadeIn 0.6s ease;
-      z-index: 1;
+      padding: 30px 20px;
     }
-
-    .notice h2 {
-      color: #444;
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-    }
-
-    .notice p {
-      color: #555;
-      margin-bottom: 25px;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 24px;
-      background-color: #444;
-      color: #fff;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      font-size: 0.95rem;
-    }
-
-    .btn:hover { background-color: #666; }
-    .btn:active { transform: scale(0.96); }
-
-    /* Анимации */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Прелоадер */
-    #preloader {
-      position: fixed;
-      inset: 0;
-      background: #f7f7f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-
-    #preloader img {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .fade-out {
-      animation: fadeOut 1.5s ease forwards;
-    }
-
-    @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
-    }
-
-    @media (max-width: 768px) {
-      .notice {
-        padding: 30px 20px;
-      }
-      .notice h2 { font-size: 1.2rem; }
-      .notice p { font-size: 0.95rem; }
-    }
-  </style>
+    .notice h2 { font-size: 1.2rem; }
+    .notice p { font-size: 0.95rem; }
+  }
+</style>
 </head>
 <body>
   <div id="preloader">
