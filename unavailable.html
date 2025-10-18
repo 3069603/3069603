@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Файл временно недоступен</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .notice {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border-radius: 6px;
+      padding: 30px;
+    }
+    .notice h2 {
+      margin-bottom: 15px;
+      color: #444;
+    }
+    .notice p {
+      margin-bottom: 25px;
+      color: #555;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #444;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn:hover { background-color: #666; }
+    .btn:active { transform: scale(0.96); }
+  </style>
+</head>
+<body>
+  <div class="notice">
+    <h2>Файл временно недоступен</h2>
+    <p>Ведутся технические работы или книга ещё не загружена.  
+       Возвращаемся на главную через пару секунд...</p>
+    <a href="index.html" class="btn">Вернуться сейчас</a>
+  </div>
+
+  <script>
+    // автоматическое возвращение на главную через 5 секунд
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 5000);
+  </script>
+</body>
+</html>
