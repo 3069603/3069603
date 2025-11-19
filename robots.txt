@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://3069603.xyz/sitemap.xml
+Sitemap: https://3069603.xyz/sitemap.txt
