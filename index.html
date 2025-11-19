@@ -25,16 +25,97 @@
         content="Писатель, бегун, криптонёрд и любитель ясных мыслей. Заходи — тут уютно.">
   <meta name="twitter:image" content="https://3069603.xyz/assets/images/avatar.png">
 
-  <!-- Author Schema -->
+  <!-- Structured data: сайт, автор и книги -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Константин Шанцев",
-    "alternateName": "departman",
-    "url": "https://3069603.xyz/",
-    "image": "https://3069603.xyz/assets/images/avatar.png",
-    "description": "Runner. Cyclist. Writer. Dabbles in code. Crypto geek. Still handy ;)"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "Обиталище Константина",
+        "url": "https://3069603.xyz/",
+        "description": "Личный сайт писателя Константина Шанцева: истории, книги и немного хулиганства.",
+        "inLanguage": "ru"
+      },
+      {
+        "@type": "Person",
+        "name": "Константин Шанцев",
+        "alternateName": "departman",
+        "url": "https://3069603.xyz/",
+        "image": "https://3069603.xyz/assets/images/avatar.png",
+        "description": "Runner. Cyclist. Writer. Dabbles in code. Crypto geek. Still handy ;)",
+        "sameAs": [
+          "https://x.com/KS3069603",
+          "https://t.me/by3069603",
+          "https://www.instagram.com/konstantin.shantsev"
+        ]
+      },
+      {
+        "@type": "Book",
+        "name": "Знайсці і знішчыць",
+        "author": {
+          "@type": "Person",
+          "name": "Константин Шанцев"
+        },
+        "image": "https://3069603.xyz/assets/images/book018.png",
+        "bookFormat": "https://schema.org/EBook",
+        "inLanguage": "be",
+        "description": "Баявы дрон-камікадзе створаны для загаду «знайсці і знішчыць», але выбірае ратаваць людзей.",
+        "url": "https://3069603.xyz/#book018"
+      },
+      {
+        "@type": "Book",
+        "name": "Найти и уничтожить",
+        "author": {
+          "@type": "Person",
+          "name": "Константин Шанцев"
+        },
+        "image": "https://3069603.xyz/assets/images/book017.png",
+        "bookFormat": "https://schema.org/EBook",
+        "inLanguage": "ru",
+        "description": "Боевой дрон-камикадзе создан для приказа «найти и уничтожить», но выбирает спасать и защищать людей.",
+        "url": "https://3069603.xyz/#book017"
+      },
+      {
+        "@type": "Book",
+        "name": "NFT от идеи до продажи",
+        "author": {
+          "@type": "Person",
+          "name": "Константин Шанцев"
+        },
+        "image": "https://3069603.xyz/assets/images/book013.png",
+        "bookFormat": "https://schema.org/EBook",
+        "inLanguage": "ru",
+        "description": "Лёгкий проводник в мир NFT: кошелёк, первый токен и продажа на маркетплейсе Getgems простым языком.",
+        "url": "https://3069603.xyz/#book013"
+      },
+      {
+        "@type": "Book",
+        "name": "Денежная грамота",
+        "author": {
+          "@type": "Person",
+          "name": "Константин Шанцев"
+        },
+        "image": "https://3069603.xyz/assets/images/book011.png",
+        "bookFormat": "https://schema.org/Book",
+        "inLanguage": "ru",
+        "description": "Нескучный учебник про деньги, который учит копить, приумножать и разумно пользоваться финансами.",
+        "url": "https://3069603.xyz/#book011"
+      },
+      {
+        "@type": "Book",
+        "name": "Песчинки счастья",
+        "author": {
+          "@type": "Person",
+          "name": "Константин Шанцев"
+        },
+        "image": "https://3069603.xyz/assets/images/book001.png",
+        "bookFormat": "https://schema.org/Book",
+        "inLanguage": "ru",
+        "description": "История о нескольких днях в зоне отчуждения и выборе оставаться человеком в любых обстоятельствах.",
+        "url": "https://3069603.xyz/#book001"
+      }
+    ]
   }
   </script>
 
@@ -62,7 +143,7 @@
   <main class="books">
 
     <!-- Книга 018 -->
-    <div class="book-card">
+    <div class="book-card" id="book018">
       <div class="book-content">
         <img src="assets/images/book018.png" alt="Обложка книги «Знайсці і знішчыць»" class="book-cover">
         <div class="book-info">
@@ -78,7 +159,7 @@
     </div>
 
     <!-- Книга 017 -->
-    <div class="book-card">
+    <div class="book-card" id="book017">
       <div class="book-content">
         <img src="assets/images/book017.png" alt="Обложка книги «Найти и уничтожить»" class="book-cover">
         <div class="book-info">
@@ -142,7 +223,7 @@
     </div>
 
     <!-- Книга 013 -->
-    <div class="book-card">
+    <div class="book-card" id="book013">
       <div class="book-content">
         <img src="assets/images/book013.png" alt="Обложка книги «NFT от идеи до продажи»" class="book-cover">
         <div class="book-info">
@@ -174,7 +255,7 @@
     </div>
 
     <!-- Книга 011 -->
-    <div class="book-card">
+    <div class="book-card" id="book011">
       <div class="book-content">
         <img src="assets/images/book011.png" alt="Обложка книги «Денежная грамота»" class="book-cover">
         <div class="book-info">
@@ -334,7 +415,7 @@
     </div>
 
     <!-- Книга 001 -->
-    <div class="book-card">
+    <div class="book-card" id="book001">
       <div class="book-content">
         <img src="assets/images/book001.png" alt="Обложка книги «Песчинки счастья»" class="book-cover">
         <div class="book-info">
